@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автосервис - Услуги</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/services.css">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+</head>
+
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <img src="img/car.svg" alt="Автосервис" class="logo-image">
+                        <span class="logo-text">Автосервис</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="services.html" class="active">Услуги</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="products.html">Автотовары</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Поиск...">
+                        <button id="search-btn">Найти</button>
+                    </div>
+                    <div class="cart-icon">
+                        <a href="products.html#cart">Корзина (<span id="cart-count">0</span>)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main">
+        <div class="container">
+            <!-- Заголовок страницы -->
+            <section class="page-header">
+                <h1>Наши услуги</h1>
+                <p>Полный спектр услуг по ремонту и обслуживанию автомобилей</p>
+            </section>
+
+            <!-- Фильтры услуг -->
+            <section class="services-filters">
+                <h2>Фильтр услуг</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Все услуги</button>
+                    <button class="filter-btn" data-filter="repair">Ремонт</button>
+                    <button class="filter-btn" data-filter="maintenance">Техобслуживание</button>
+                    <button class="filter-btn" data-filter="diagnostics">Диагностика</button>
+                    <button class="filter-btn" data-filter="body">Кузовные работы</button>
+                </div>
+                <div class="price-filter">
+                    <label for="price-range">Цена до: <span id="price-value">5000</span> руб.</label>
+                    <input type="range" id="price-range" min="1000" max="20000" value="5000" step="1000">
+                </div>
+            </section>
+
+            <!-- Список услуг -->
+            <section class="services-list">
+                <div class="service-card" data-category="diagnostics" data-price="1500">
+                    <div class="service-image">
+                        <img src="img/services1.jpg" alt="Компьютерная диагностика">
+                    </div>
+                    <div class="service-content">
+                        <h3>Компьютерная диагностика</h3>
+                        <p>Полная проверка электронных систем автомобиля с помощью современного оборудования</p>
+                        <div class="service-details">
+                            <div class="service-price">от 1500 руб.</div>
+                            <div class="service-time">~ 1 час</div>
+                        </div>
+                        <button class="btn-primary order-service" data-id="1" data-name="Компьютерная диагностика"
+                            data-price="1500">Заказать</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-category="maintenance" data-price="2500">
+                    <div class="service-image">
+                        <img src="img/services2.jpg" alt="Замена масла">
+                    </div>
+                    <div class="service-content">
+                        <h3>Замена масла и фильтров</h3>
+                        <p>Замена моторного масла, масляного, воздушного и салонного фильтров</p>
+                        <div class="service-details">
+                            <div class="service-price">от 2500 руб.</div>
+                            <div class="service-time">~ 45 мин</div>
+                        </div>
+                        <button class="btn-primary order-service" data-id="2" data-name="Замена масла и фильтров"
+                            data-price="2500">Заказать</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-category="repair" data-price="8000">
+                    <div class="service-image">
+                        <img src="img/services3.jpg" alt="Ремонт тормозной системы">
+                    </div>
+                    <div class="service-content">
+                        <h3>Ремонт тормозной системы</h3>
+                        <p>Замена тормозных колодок, дисков, тормозной жидкости, проверка ABS</p>
+                        <div class="service-details">
+                            <div class="service-price">от 8000 руб.</div>
+                            <div class="service-time">~ 2 часа</div>
+                        </div>
+                        <button class="btn-primary order-service" data-id="3" data-name="Ремонт тормозной системы"
+                            data-price="8000">Заказать</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-category="body" data-price="12000">
+                    <div class="service-image">
+                        <img src="img/services4.jpg" alt="Покраска кузова">
+                    </div>
+                    <div class="service-content">
+                        <h3>Покраска кузова</h3>
+                        <p>Локальная и полная покраска автомобиля, полировка, удаление царапин</p>
+                        <div class="service-details">
+                            <div class="service-price">от 12000 руб.</div>
+                            <div class="service-time">~ 1 день</div>
+                        </div>
+                        <button class="btn-primary order-service" data-id="4" data-name="Покраска кузова"
+                            data-price="12000">Заказать</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-category="maintenance" data-price="3500">
+                    <div class="service-image">
+                        <img src="img/services5.jpg" alt="Шиномонтаж">
+                    </div>
+                    <div class="service-content">
+                        <h3>Шиномонтаж и балансировка</h3>
+                        <p>Сезонная замена шин, балансировка колес, ремонт проколов</p>
+                        <div class="service-details">
+                            <div class="service-price">от 3500 руб.</div>
+                            <div class="service-time">~ 1 час</div>
+                        </div>
+                        <button class="btn-primary order-service" data-id="5" data-name="Шиномонтаж и балансировка"
+                            data-price="3500">Заказать</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-category="repair" data-price="6000">
+                    <div class="service-image">
+                        <img src="img/services6.jpg" alt="Ремонт подвески">
+                    </div>
+                    <div class="service-content">
+                        <h3>Ремонт подвески</h3>
+                        <p>Замена амортизаторов, сайлентблоков, шаровых опор, пружин</p>
+                        <div class="service-details">
+                            <div class="service-price">от 6000 руб.</div>
+                            <div class="service-time">~ 3 часа</div>
+                        </div>
+                        <button class="btn-primary order-service" data-id="6" data-name="Ремонт подвески"
+                            data-price="6000">Заказать</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Форма заявки на услугу -->
+            <section class="service-request">
+                <h2>Заявка на услугу</h2>
+
+                <div id="selected-services" class="selected-services-container">
+                    <div class="no-services-selected">
+                        <p>Выберите услуги из списка выше</p>
+                    </div>
+                </div>
+
+                <form id="service-request-form" class="request-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="service-name">Ваше имя *</label>
+                            <input type="text" id="service-name" name="name" placeholder="Введите ваше имя" required
+                                autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="service-phone">Телефон *</label>
+                            <input type="tel" id="service-phone" name="phone" placeholder="+7 (999) 999-99-99"
+                                pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" required autocomplete="tel">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="service-car">Марка и модель автомобиля *</label>
+                            <input type="text" id="service-car" name="car" placeholder="Например: Toyota Camry" required
+                                autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="service-date">Желаемая дата *</label>
+                            <input type="date" id="service-date" name="date" max="2027-12-31" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service-comments">Комментарий</label>
+                        <textarea id="service-comments" name="comments" rows="4"
+                            placeholder="Дополнительная информация о проблеме или пожелания"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Отправить заявку</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>г. Красноярск, ул. Водопьянова, д. 15</p>
+                    <p>Телефон: +7 (988) 888-88-88</p>
+                    <p>Email: info@avtoservis.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Режим работы</h3>
+                    <p>Пн-Пт: 9:00 - 20:00</p>
+                    <p>Сб: 10:00 - 18:00</p>
+                    <p>Вс: выходной</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="products.html">Автотовары</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2020 Автосервис. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для сообщений -->
+    <div id="message-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="message-content"></div>
+            <div class="modal-actions">
+                <button class="btn-primary" id="message-ok">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/services.js"></script>
+</body>
+
+</html>

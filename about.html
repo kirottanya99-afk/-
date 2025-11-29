@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автосервис - О нас</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/about.css">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+</head>
+
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <img src="img/car.svg" alt="Автосервис" class="logo-image">
+                        <span class="logo-text">Автосервис</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="about.html" class="active">О нас</a></li>
+                        <li><a href="products.html">Автотовары</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Поиск...">
+                        <button id="search-btn">Найти</button>
+                    </div>
+                    <div class="cart-icon">
+                        <a href="products.html#cart">Корзина (<span id="cart-count">0</span>)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main">
+        <div class="container">
+            <section class="page-header">
+                <h1>О компании </h1>
+                <p>Более 10 лет мы заботимся о ваших автомобилях</p>
+            </section>
+
+            <!-- О компании -->
+            <section class="about-section">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Наша история</h2>
+                        <p>Автосервис был основан в 2012 году группой энтузиастов, которые хотели создать место, где
+                            каждый клиент мог бы получить качественный и честный сервис для своего автомобиля.</p>
+                        <p>За годы работы мы выросли из небольшой мастерской в современный автосервис с полным циклом
+                            услуг. Наш коллектив состоит из высококвалифицированных специалистов с многолетним опытом
+                            работы.</p>
+                        <div class="stats">
+                            <div class="stat">
+                                <div class="stat-number" data-target="10">0</div>
+                                <div class="stat-label">лет работы</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number" data-target="5000">0</div>
+                                <div class="stat-label">довольных клиентов</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number" data-target="15">0</div>
+                                <div class="stat-label">специалистов</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="img/1.jpg?version=1" alt="Наш автосервис">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Наши преимущества -->
+            <section class="advantages-section">
+                <h2>Почему выбирают нас</h2>
+                <div class="advantages">
+                    <div class="advantage">
+                        <div class="advantage-icon">🔧</div>
+                        <h3>Профессионализм</h3>
+                        <p>Наши специалисты регулярно проходят обучение и имеют сертификаты от ведущих производителей
+                        </p>
+                    </div>
+                    <div class="advantage">
+                        <div class="advantage-icon">⚡</div>
+                        <h3>Скорость</h3>
+                        <p>Большинство работ выполняем в день обращения благодаря современному оборудованию</p>
+                    </div>
+                    <div class="advantage">
+                        <div class="advantage-icon">💎</div>
+                        <h3>Качество</h3>
+                        <p>Используем только оригинальные запчасти и качественные расходные материалы</p>
+                    </div>
+                    <div class="advantage">
+                        <div class="advantage-icon">💰</div>
+                        <h3>Цены</h3>
+                        <p>Предлагаем конкурентные цены без скрытых доплат и накруток</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Наша команда -->
+            <section class="team-section">
+                <h2>Наша команда</h2>
+                <div class="team-members">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="img/about1.jpg" alt="Дмитрий Иванов">
+                        </div>
+                        <div class="member-info">
+                            <h3>Дмитрий Иванов</h3>
+                            <p class="member-position">Главный механик</p>
+                            <p class="member-experience">Опыт работы: 15 лет</p>
+                            <p class="member-description">Специалист по двигателям и трансмиссиям. Проходил обучение в
+                                Германии.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="img/about2.jpeg" alt="Анна Петрова">
+                        </div>
+                        <div class="member-info">
+                            <h3>Анна Петрова</h3>
+                            <p class="member-position">Специалист по электрике</p>
+                            <p class="member-experience">Опыт работы: 8 лет</p>
+                            <p class="member-description">Эксперт по диагностике и ремонту электронных систем
+                                автомобилей.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="img/about3.jpg" alt="Сергей Козлов">
+                        </div>
+                        <div class="member-info">
+                            <h3>Сергей Козлов</h3>
+                            <p class="member-position">Маляр-кузовщик</p>
+                            <p class="member-experience">Опыт работы: 12 лет</p>
+                            <p class="member-description">Мастер по кузовному ремонту и покраске. Работает с любыми
+                                типами ЛКП.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Наши партнеры -->
+            <section class="partners-section">
+                <h2>Наши партнеры</h2>
+                <div class="partners">
+                    <div class="partner">
+                        <div class="partner-logo">
+                            <img src="img/Bosch.png" alt="Bosch">
+                        </div>
+                        <div class="partner-name">Bosch</div>
+                    </div>
+                    <div class="partner">
+                        <div class="partner-logo">
+                            <img src="img/castrol.jpeg" alt="Castrol">
+                        </div>
+                        <div class="partner-name">Castrol</div>
+                    </div>
+                    <div class="partner">
+                        <div class="partner-logo">
+                            <img src="img/Ngk.png" alt="NGK">
+                        </div>
+                        <div class="partner-name">NGK</div>
+                    </div>
+                    <div class="partner">
+                        <div class="partner-logo">
+                            <img src="img/mann.jpg" alt="Mann">
+                        </div>
+                        <div class="partner-name">Mann</div>
+                    </div>
+                    <div class="partner">
+                        <div class="partner-logo">
+                            <img src="img/Febi_Bilstein.jpg" alt="Febi Bilstein">
+                        </div>
+                        <div class="partner-name">Febi Bilstein</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Сертификаты -->
+            <section class="certificates-section">
+                <h2>Наши сертификаты</h2>
+                <div class="certificates">
+                    <div class="certificate">
+                        <img src="img/sertificate1.jpg" alt="Сертификат Bosch">
+                        <p>Официальный партнер Bosch</p>
+                    </div>
+                    <div class="certificate">
+                        <img src="img/sertificate2.jpg" alt="Сертификат Castrol">
+                        <p>Авторизованный сервис Castrol</p>
+                    </div>
+                    <div class="certificate">
+                        <img src="img/sertificate3.jpg" alt="Сертификат NGK">
+                        <p>Партнер NGK Spark Plugs</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>г. Красноярск, ул. Водопьянова, д. 15</p>
+                    <p>Телефон: +7 (988) 888-88-88</p>
+                    <p>Email: info@avtoservis.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Режим работы</h3>
+                    <p>Пн-Пт: 9:00 - 20:00</p>
+                    <p>Сб: 10:00 - 18:00</p>
+                    <p>Вс: выходной</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="products.html">Автотовары</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2020 Автосервис. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для сообщений -->
+    <div id="message-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="message-content"></div>
+            <div class="modal-actions">
+                <button class="btn-primary" id="message-ok">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/about.js"></script>
+</body>
+
+</html>

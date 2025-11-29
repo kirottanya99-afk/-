@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автосервис - Главная</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index.css">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+</head>
+
+<body>
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <img src="img/car.svg" alt="Автосервис" class="logo-image">
+                        <span class="logo-text">Автосервис</span>
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="products.html">Автотовары</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Поиск...">
+                        <button id="search-btn">Найти</button>
+                    </div>
+                    <div class="cart-icon">
+                        <a href="products.html#cart">Корзина (<span id="cart-count">0</span>)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Слайдер -->
+    <section class="slider-section">
+        <div class="container">
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide active">
+                        <img src="img/1.jpg" alt="Профессиональный ремонт">
+                        <div class="slide-content">
+                            <h2>Профессиональный ремонт автомобилей</h2>
+                            <p>Качественный сервис для вашего автомобиля</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/2.jpg" alt="Диагностика и техобслуживание">
+                        <div class="slide-content">
+                            <h2>Диагностика и техобслуживание</h2>
+                            <p>Современное оборудование для точной диагностики</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img src="img/3.jpg" alt="Шиномонтаж и сход-развал">
+                        <div class="slide-content">
+                            <h2>Шиномонтаж и сход-развал</h2>
+                            <p>Профессиональный подход к вашей безопасности</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="prev-btn">&#10094;</button>
+                    <button class="next-btn">&#10095;</button>
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <main class="main">
+        <div class="container">
+            <!-- Приветственная секция -->
+            <section class="welcome-section">
+                <h2>Добро пожаловать в автосервис</h2>
+                <p>Мы предоставляем полный спектр услуг по ремонту и обслуживанию автомобилей. Наши специалисты с
+                    многолетним опытом готовы помочь с любой проблемой вашего автомобиля.</p>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">🔧</div>
+                        <h3>Качественный ремонт</h3>
+                        <p>Используем только оригинальные запчасти и современное оборудование</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⏱️</div>
+                        <h3>Быстрое выполнение</h3>
+                        <p>Соблюдаем сроки и предоставляем гарантию на все виды работ</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">💰</div>
+                        <h3>Доступные цены</h3>
+                        <p>Предлагаем конкурентные цены без потери качества</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Форма заявки -->
+            <section class="request-section">
+                <h2>Оставьте заявку на ремонт</h2>
+                <form id="request-form" class="request-form">
+                    <div class="form-group">
+                        <label for="name">Ваше имя *</label>
+                        <input type="text" id="name" name="name" placeholder="Введите ваше имя" required
+                            autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+7 (999) 999-99-99"
+                            pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" required autocomplete="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="car">Марка и модель автомобиля *</label>
+                        <input type="text" id="car" name="car" placeholder="Например: Toyota Camry" required
+                            autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="problem">Описание проблемы *</label>
+                        <textarea id="problem" name="problem" rows="4"
+                            placeholder="Опишите проблему с вашим автомобилем" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Отправить заявку</button>
+                </form>
+            </section>
+
+            <!-- Отзывы -->
+            <section class="reviews-section">
+                <h2>Отзывы наших клиентов</h2>
+                <div class="reviews">
+                    <div class="review">
+                        <div class="review-header">
+                            <div class="review-author">Иван Петров</div>
+                            <div class="review-date">15.05.2023</div>
+                        </div>
+                        <div class="review-rating">★★★★★</div>
+                        <div class="review-text">Отличный сервис! Быстро и качественно починили ходовую часть. Цены
+                            адекватные, персонал вежливый. Рекомендую!</div>
+                    </div>
+                    <div class="review">
+                        <div class="review-header">
+                            <div class="review-author">Мария Сидорова</div>
+                            <div class="review-date">22.06.2023</div>
+                        </div>
+                        <div class="review-rating">★★★★☆</div>
+                        <div class="review-text">Делали замену масла и техосмотр. Все сделали быстро, но пришлось
+                            немного подождать в очереди. В целом довольна.</div>
+                    </div>
+                    <div class="review">
+                        <div class="review-header">
+                            <div class="review-author">Алексей Козлов</div>
+                            <div class="review-date">10.07.2023</div>
+                        </div>
+                        <div class="review-rating">★★★★★</div>
+                        <div class="review-text">Регулярно обслуживаю здесь свой автомобиль. Всегда качественная работа
+                            и приятные цены. Спасибо за профессионализм!</div>
+                    </div>
+                </div>
+                <button id="add-review-btn" class="btn-secondary">Оставить отзыв</button>
+            </section>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>г. Красноярск, ул. Водопьянова, д. 15</p>
+                    <p>Телефон: +7 (988) 888-88-88</p>
+                    <p>Email: info@avtoservis.ru</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Режим работы</h3>
+                    <p>Пн-Пт: 9:00 - 20:00</p>
+                    <p>Сб: 10:00 - 18:00</p>
+                    <p>Вс: выходной</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="services.html">Услуги</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="products.html">Автотовары</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2020 Автосервис. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для отзыва -->
+    <div id="review-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Оставить отзыв</h2>
+            <form id="review-form">
+                <div class="form-group">
+                    <label for="review-name">Ваше имя *</label>
+                    <input type="text" id="review-name" placeholder="Введите ваше имя" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="review-rating">Оценка *</label>
+                    <select id="review-rating" required>
+                        <option value="5">★★★★★</option>
+                        <option value="4">★★★★☆</option>
+                        <option value="3">★★★☆☆</option>
+                        <option value="2">★★☆☆☆</option>
+                        <option value="1">★☆☆☆☆</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="review-text">Текст отзыва *</label>
+                    <textarea id="review-text" rows="5" placeholder="Напишите ваш отзыв" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Отправить отзыв</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно для сообщений -->
+    <div id="message-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="message-content"></div>
+            <div class="modal-actions">
+                <button class="btn-primary" id="message-ok">OK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
