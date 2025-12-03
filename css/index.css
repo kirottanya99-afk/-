@@ -257,6 +257,30 @@
     margin: 0 auto;
 }
 
+/* Стили для валидации форм */
+.form-group input.validate-name:invalid,
+.form-group input.validate-name.error,
+.form-group textarea.validate-name:invalid,
+.form-group textarea.validate-name.error,
+.form-group input.validate-email:invalid,
+.form-group input.validate-email.error,
+.form-group input.validate-card-holder:invalid,
+.form-group input.validate-card-holder.error {
+    border-color: #e74c3c;
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.2);
+}
+
+.form-hint {
+    display: block;
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+.form-hint.error {
+    color: #e74c3c;
+}
+
 /* Анимации */
 @keyframes fadeInUp {
     from {

@@ -22,7 +22,7 @@ body {
 .header {
     background-color: #2c3e50;
     color: white;
-    padding: 15px 0;
+    padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
@@ -41,29 +41,105 @@ body {
     align-items: center;
     text-decoration: none;
     color: white;
-    gap: 10px;
+    gap: 8px;
 }
 
 .logo-image {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     filter: brightness(0) invert(1); /* Делает SVG белым */
 }
 
 .logo-text {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 /* Адаптивность для мобильных */
 @media (max-width: 768px) {
+    .header {
+        padding: 8px 0;
+    }
+    
     .logo-image {
-        width: 32px;
-        height: 32px;
+        width: 30px;
+        height: 30px;
     }
     
     .logo-text {
-        font-size: 20px;
+        font-size: 18px;
+    }
+    
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        margin: 5px 0;
+    }
+    
+    .nav-list li {
+        margin: 0 8px;
+    }
+    
+    .nav-list a {
+        font-size: 14px;
+        padding: 3px 0;
+    }
+    
+    .search-box {
+        margin-right: 10px;
+    }
+    
+    .search-box input {
+        padding: 6px 10px;
+        font-size: 14px;
+        width: 120px;
+    }
+    
+    .search-box button {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 6px 0;
+    }
+    
+    .logo-text {
+        display: none; /* Скрываем текст логотипа на очень маленьких экранах */
+    }
+    
+    .logo-image {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .nav-list {
+        gap: 3px;
+    }
+    
+    .nav-list li {
+        margin: 0 5px;
+    }
+    
+    .nav-list a {
+        font-size: 13px;
+    }
+    
+    .search-box input {
+        width: 100px;
+        padding: 5px 8px;
+    }
+    
+    .search-box button {
+        padding: 5px 10px;
+    }
+    
+    .cart-icon a {
+        font-size: 14px;
     }
 }
 
@@ -395,30 +471,6 @@ select[multiple] {
 
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
-    .mobile-header .header-content {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .mobile-header .nav-list {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .mobile-header .header-actions {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-    }
-    
-    .mobile-header .search-box {
-        width: 100%;
-    }
-    
-    .mobile-header .search-box input {
-        width: 100%;
-    }
-
     /* Адаптивные модальные окна */
     .modal {
         padding: 10px;
@@ -437,6 +489,20 @@ select[multiple] {
     
     .modal-actions button {
         width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        margin-bottom: 30px;
+    }
+
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
+        padding: 20px;
     }
 }
 
@@ -478,25 +544,6 @@ select[multiple] {
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .nav-list {
-        margin: 15px 0;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .nav-list li {
-        margin: 5px 10px;
-    }
-    
-    .header-actions {
-        margin-top: 15px;
-    }
-    
     .footer-content {
         flex-direction: column;
     }

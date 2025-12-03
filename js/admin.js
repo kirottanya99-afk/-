@@ -1,4 +1,4 @@
-        // Данные для админ панели
+// Данные для админ панели
         let adminData = {
             repairRequests: [],
             serviceRequests: [],
@@ -97,7 +97,10 @@
                     <td>${request.date || new Date().toLocaleDateString('ru-RU')}</td>
                     <td><span class="status-badge status-${request.status || 'new'}">${getStatusText(request.status)}</span></td>
                     <td class="cell-actions">
-                        <button class="btn btn-primary btn-small" onclick="changeRequestStatus('${request.id}', 'processed')">В работу</button>
+                        ${request.status !== 'completed' ? `
+                            <button class="btn btn-primary btn-small" onclick="changeRequestStatus('${request.id}', 'processed')">В работу</button>
+                            <button class="btn btn-success btn-small" onclick="changeRequestStatus('${request.id}', 'completed')">Завершить</button>
+                        ` : ''}
                         <button class="btn btn-danger btn-small" onclick="deleteRequest('${request.id}')">Удалить</button>
                     </td>
                 </tr>
@@ -132,7 +135,10 @@
                     <td>${request.date || new Date().toLocaleDateString('ru-RU')}</td>
                     <td><span class="status-badge status-${request.status || 'new'}">${getStatusText(request.status)}</span></td>
                     <td class="cell-actions">
-                        <button class="btn btn-primary btn-small" onclick="changeServiceStatus('${request.id}', 'processed')">В работу</button>
+                        ${request.status !== 'completed' ? `
+                            <button class="btn btn-primary btn-small" onclick="changeServiceStatus('${request.id}', 'processed')">В работу</button>
+                            <button class="btn btn-success btn-small" onclick="changeServiceStatus('${request.id}', 'completed')">Завершить</button>
+                        ` : ''}
                         <button class="btn btn-danger btn-small" onclick="deleteServiceRequest('${request.id}')">Удалить</button>
                     </td>
                 </tr>
@@ -167,7 +173,10 @@
                     <td>${order.date || new Date().toLocaleDateString('ru-RU')}</td>
                     <td><span class="status-badge status-${order.status || 'new'}">${getStatusText(order.status)}</span></td>
                     <td class="cell-actions">
-                        <button class="btn btn-primary btn-small" onclick="changeOrderStatus('${order.id}', 'processed')">В работу</button>
+                        ${order.status !== 'completed' ? `
+                            <button class="btn btn-primary btn-small" onclick="changeOrderStatus('${order.id}', 'processed')">В работу</button>
+                            <button class="btn btn-success btn-small" onclick="changeOrderStatus('${order.id}', 'completed')">Завершить</button>
+                        ` : ''}
                         <button class="btn btn-danger btn-small" onclick="deleteOrder('${order.id}')">Удалить</button>
                     </td>
                 </tr>
@@ -196,7 +205,10 @@
                     <td>${review.date || new Date().toLocaleDateString('ru-RU')}</td>
                     <td><span class="status-badge status-${review.status || 'new'}">${getStatusText(review.status)}</span></td>
                     <td class="cell-actions">
-                        <button class="btn btn-primary btn-small" onclick="publishReview('${review.id}')">Опубликовать</button>
+                        ${review.status !== 'completed' ? `
+                            <button class="btn btn-primary btn-small" onclick="publishReview('${review.id}')">Опубликовать</button>
+                            <button class="btn btn-success btn-small" onclick="completeReview('${review.id}')">Завершить</button>
+                        ` : ''}
                         <button class="btn btn-danger btn-small" onclick="deleteReview('${review.id}')">Удалить</button>
                     </td>
                 </tr>
@@ -256,6 +268,15 @@
             const review = adminData.reviews.find(rev => rev.id === reviewId);
             if (review) {
                 review.status = 'published';
+                localStorage.setItem('reviews', JSON.stringify(adminData.reviews));
+                loadAdminData();
+            }
+        }
+        
+        function completeReview(reviewId) {
+            const review = adminData.reviews.find(rev => rev.id === reviewId);
+            if (review) {
+                review.status = 'completed';
                 localStorage.setItem('reviews', JSON.stringify(adminData.reviews));
                 loadAdminData();
             }

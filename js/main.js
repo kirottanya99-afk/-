@@ -1,5 +1,3 @@
-// main.js - Общие функции для всего сайта
-
 // Функция для загрузки данных корзины из localStorage
 function loadCart() {
     const cart = localStorage.getItem('cart');
@@ -306,7 +304,7 @@ function initializeModals() {
     });
 }
 
-// Функция для валидации форм
+// Функция для валидации форм с фильтрацией имени и email
 function initializeFormValidation() {
     const forms = document.querySelectorAll('form');
     
@@ -339,10 +337,13 @@ function initializeFormValidation() {
                         }
                     }
                     
-                    // Валидация email
+                    // Валидация email - только один символ @
                     if (field.type === 'email' && field.value) {
+                        const emailValue = field.value;
+                        const atCount = (emailValue.match(/@/g) || []).length;
                         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                        if (!emailPattern.test(field.value)) {
+                        
+                        if (atCount !== 1 || !emailPattern.test(emailValue)) {
                             isValid = false;
                             field.classList.add('error');
                             if (!firstInvalidField) {
@@ -351,10 +352,22 @@ function initializeFormValidation() {
                         }
                     }
                     
-                    // Валидация имени владельца карты
-                    if (field.id === 'card-holder' && field.value) {
+                    // Валидация имени - только буквы и пробелы (русские и английские)
+                    if (field.classList.contains('validate-name') && field.value) {
+                        const namePattern = /^[A-Za-zА-Яа-яЁё\s]+$/;
+                        if (!namePattern.test(field.value.trim())) {
+                            isValid = false;
+                            field.classList.add('error');
+                            if (!firstInvalidField) {
+                                firstInvalidField = field;
+                            }
+                        }
+                    }
+                    
+                    // Валидация имени владельца карты - только заглавные английские буквы и пробелы
+                    if (field.classList.contains('validate-card-holder') && field.value) {
                         const cardHolderPattern = /^[A-Z\s]+$/;
-                        if (!cardHolderPattern.test(field.value)) {
+                        if (!cardHolderPattern.test(field.value.trim())) {
                             isValid = false;
                             field.classList.add('error');
                             if (!firstInvalidField) {
@@ -382,6 +395,36 @@ function initializeFormValidation() {
         inputs.forEach(input => {
             input.addEventListener('input', function() {
                 this.classList.remove('error');
+                
+                // Реальная фильтрация ввода для имени
+                if (this.classList.contains('validate-name')) {
+                    let value = this.value;
+                    // Удаляем все символы, кроме букв и пробелов
+                    value = value.replace(/[^A-Za-zА-Яа-яЁё\s]/g, '');
+                    this.value = value;
+                }
+                
+                // Реальная фильтрация ввода для email - ограничиваем количество @
+                if (this.type === 'email') {
+                    let value = this.value;
+                    const atCount = (value.match(/@/g) || []).length;
+                    if (atCount > 1) {
+                        // Оставляем только первый символ @
+                        const parts = value.split('@');
+                        value = parts[0] + '@' + parts.slice(1).join('');
+                        this.value = value;
+                    }
+                }
+                
+                // Реальная фильтрация ввода для имени владельца карты
+                if (this.classList.contains('validate-card-holder')) {
+                    let value = this.value;
+                    // Удаляем все символы, кроме английских букв и пробелов
+                    value = value.replace(/[^A-Z\s]/gi, '');
+                    // Преобразуем в верхний регистр
+                    value = value.toUpperCase();
+                    this.value = value;
+                }
             });
         });
     });

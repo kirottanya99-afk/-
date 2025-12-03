@@ -236,7 +236,8 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="order-name">Имя *</label>
-                        <input type="text" id="order-name" placeholder="Введите ваше имя" required autocomplete="name">
+                        <input type="text" id="order-name" placeholder="Введите ваше имя" required autocomplete="name" class="validate-name">
+                        <span class="form-hint">Только буквы и пробелы</span>
                     </div>
                     <div class="form-group">
                         <label for="order-phone">Телефон *</label>
@@ -245,7 +246,8 @@
                 </div>
                 <div class="form-group">
                     <label for="order-email">Email *</label>
-                    <input type="email" id="order-email" placeholder="example@mail.ru" required autocomplete="email">
+                    <input type="email" id="order-email" placeholder="example@mail.ru" required autocomplete="email" class="validate-email">
+                    <span class="form-hint">Только один символ @</span>
                 </div>
                 <div class="form-group">
                     <label for="order-address">Адрес доставки *</label>
@@ -295,7 +297,8 @@
                 </div>
                 <div class="form-group">
                     <label for="card-holder">Имя владельца карты</label>
-                    <input type="text" id="card-holder" placeholder="IVAN IVANOV" required autocomplete="cc-name">
+                    <input type="text" id="card-holder" placeholder="IVAN IVANOV" required autocomplete="cc-name" class="validate-card-holder">
+                    <span class="form-hint">Только заглавные латинские буквы и пробелы</span>
                 </div>
                 <button type="submit" class="btn-primary">Оплатить</button>
             </form>

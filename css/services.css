@@ -336,6 +336,18 @@
     flex: 1;
 }
 
+/* Стили для валидации форм */
+.form-hint {
+    display: block;
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-top: 5px;
+}
+
+.form-hint.error {
+    color: #e74c3c;
+}
+
 /* Стили для модального окна успеха */
 .success-modal-content {
     text-align: center;
